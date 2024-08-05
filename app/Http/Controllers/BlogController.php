@@ -42,7 +42,21 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->img_title) {
+            $img_title_name = time().'_'. $request->img->getClientOriginalName();
+            $request->img->move(public_path('uploads'), $img_title_name);
+        }else{
+            $img_title_name = 'default.png';
+        }
+        if ($request->img) {
+            $img_name = time().'_'. $request->img->getClientOriginalName();
+            $request->img->move(public_path('uploads'), $img_name);
+        }else{
+            $img_name = 'default.png';
+        }
         $formData = $request->all();
+        $formData['image'] = $img_name;
+        $formData['image_title'] = $img_title_name;
         if (BLog::create($formData)) {
             return redirect()->route('user.index')->with('success', 'Thêm mới thành công');
         } else {
@@ -82,8 +96,20 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
          // lấy các trường khác trên form
-         $formData = $request->all();
-        
+        //$time = time();
+        //dd($a);
+        $formData = $request->all();
+         if ($request->has('img_title')) {
+            $img_title_name = time().'_'. $request->img_title->getClientOriginalName();
+            //dd($img_title_name);
+            $request->img_title->move(public_path('uploads'), $img_title_name);
+            $formData['image_title'] = $img_title_name;
+        }
+        if ($request->has('img')) {
+            $img_name = time().'_'. $request->img->getClientOriginalName();
+            $request->img->move(public_path('uploads'), $img_name);
+            $formData['image'] = $img_name;
+        }
          if ($blog->update($formData)) {
              return redirect()->route('blog.index')->with('success', 'Cập nhật thành công');
          } else {

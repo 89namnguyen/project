@@ -33,11 +33,11 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="">Ảnh nền</label>
-                <input type="file" class="form-control" name="img_title">
+                <input type="file" class="form-control" name="img">
                 @error('img_title')
                 <small>{{$message}}</small>
                 @enderror
-                <img src="{{ url('uploads') }}/{{$blog->image_title}}" width="200px">
+                <img src="{{ url('uploads') }}/{{$blog->image_title}}" width="100%">
             </div>
             <div class="form-group">
                 <label for="">Ảnh</label>
@@ -45,13 +45,10 @@
                 @error('img')
                 <small>{{$message}}</small>
                 @enderror
-                <img src="{{ url('uploads') }}/{{$blog->image}}" width="200px">
+                <img src="{{ url('uploads') }}/{{$blog->image}}" width="100%">
             </div>
-            
+            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Sửa</button>
         </div>
-    </div>
-    <div class="row">
-        <button type="submit" class="btn btn-primary" style="witdh:60px;margin-left: 50%;"><i class="fa fa-save"></i> Sửa</button>
     </div>
 </div>
 

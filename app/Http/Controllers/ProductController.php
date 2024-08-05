@@ -46,7 +46,7 @@ class ProductController extends Controller
         //dump($request->img);
         // lấy tên file ảnh 
         if ($request->img) {
-            $img_name = $request->img->getClientOriginalName();
+            $img_name = time().'_'. $request->img->getClientOriginalName();
             $request->img->move(public_path('uploads'), $img_name);
         }else{
             $img_name = 'default.png';
@@ -103,7 +103,7 @@ class ProductController extends Controller
         $img_name = $product->image;
         // upload ảnh vào thư mục public/uploads
         if ($request->has('img')) {
-            $img_name = $request->img->getClientOriginalName();
+            $img_name = time()+'_'+ $request->img->getClientOriginalName();
             $request->img->move(public_path('uploads'), $img_name);
         }
         

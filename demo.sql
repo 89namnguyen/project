@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `title` NVARCHAR(100),
   `induction` text,
   `image_title` VARCHAR(100),
-  `customer_id` INT NOT NULL,
+  `customer_id` INT NOT NULL DEFAULT '1',
   `content` text ,
   `image` NVARCHAR(100),
   `date` date DEFAULT NOW(),

@@ -28,19 +28,19 @@
         @foreach($data as $object)
         <tr>
             <td>{{$object->id}}</td>
-            <td style="width: 100px; ">{{$object->title}}</td>
-            <td style="width: 100px; ">{{$object->induction}}</td>
-            <td style="width: 80px; ">
-                <img src="{{ url('uploads') }}/{{$object->image_title}}" width="80">
+            <td>{{$object->title}}</td>
+            <td>{{$object->induction}}</td>
+            <td>
+                <img src="{{ url('uploads') }}/{{$object->image_title}}" width="40">
             </td>
-            <td style="width: 100px">{{$object->custom->name}}</td>
+            <td>{{$object->custom->name}}</td>
             <td>{{$object->content}}</td>
             <td>
-                <img src="{{ url('uploads') }}/{{$object->image}}" width="80">
+                <img src="{{ url('uploads') }}/{{$object->image}}" width="40">
             </td>
-            <td  style="width: 100px">{{$object->date}}</td>
-            <td  style="width: 80px">{{$object->view}}</td>
-            <td class="text-right" style="width: 150px;">
+            <td>{{$object->date}}</td>
+            <td>{{$object->view}}</td>
+            <td class="text-right">
                 <form action="{{ route('blog.destroy', $object->id) }}" method="post">
                     @csrf @method('DELETE')
                     <a href="{{ route('blog.edit', $object->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Sửa</a>

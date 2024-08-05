@@ -1,73 +1,60 @@
 @extends('admin.master')
-@section('title', 'Thêm mới sản phẩm')
+@section('title', 'Sửa sản phẩm')
 @section('main')
 
-<form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
+<form action="{{route('blog.store')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="form-group">
-                <label for="">Tên sản phẩm</label>
-                <input class="form-control" name="name" placeholder="Input field">
-                @error('name')
+                <label for="">Tiêu đề</label>
+                <input class="form-control" name="title" placeholder="Input field" >
+                @error('title')
                 <small>{{$message}}</small>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="">Mô tả sản phẩm</label>
+                <label for="induction">Mô tả</label>
 
-                <textarea name="description" class="form-control description" rows="3" placeholder="Mô tả"></textarea>
-                @error('description')
-                <small>{{$message}}</small>
-                @enderror
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="">Danh mục</label>
-
-                <select name="category_id" class="form-control">
-                    <option value="">Chọn một---</option>
-                    @foreach($cats as $cat)
-                    <option value="{{$cat->id}}">{{$cat->name}}</option>
-                    @endforeach
-                </select>
-
-                @error('category_id')
-                <small>{{$message}}</small>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="">Giá sản phẩm</label>
-                <input class="form-control" name="price" placeholder="Input field">
-                @error('price')
-                <small>{{$message}}</small>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="">Giá khuyến mãi</label>
-                <input class="form-control" name="sale_price" placeholder="Input field">
-                @error('sale_price')
+                <textarea name="induction" class="form-control description" rows="3" placeholder="Mô tả"></textarea>
+                @error('induction')
                 <small>{{$message}}</small>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="">Ảnh đại diện</label>
-                <input type="file" class="form-control" name="img">
-                @error('img')
+                <label for="">Ảnh nền</label>
+                <input type="file" class="form-control" name="img_title" style="width: 30%;">
+                @error('img_title')
                 <small>{{$message}}</small>
                 @enderror
             </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="">Ảnh</label>
+                    <input type="file" class="form-control" name="img" style="width: 30%;">
+                    @error('img')
+                    <small>{{$message}}</small>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="content">Nội dung</label>
 
+                <textarea name="content" class="form-control description" rows="3" placeholder="Mô tả"></textarea>
+                @error('content')
+                <small>{{$message}}</small>
+                @enderror
+            </div>
+            
         </div>
     </div>
+    <div class="row">
+        <button type="submit" class="btn btn-primary" style="witdh:60px; margin-left:20px;"><i class="fa fa-save"></i> Thêm mới</button>
+    </div>
+</div>
 
-
-
-    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Tạo mới</button>
+    
 </form>
 
 
-@stop
+@stops
