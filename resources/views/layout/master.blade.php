@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="vn">
 
 <head>
     <meta charset="UTF-8">
@@ -142,9 +142,9 @@
         </div>
     </header>
     <!-- Header Section End -->
-
-    @yield('main')
-
+	<div class="body">
+		@yield('main')
+	</div>
     <!-- Footer Section Begin -->
     <footer class="footer set-bg" data-setbg="img/footer-bg.jpg">
         <div class="container">
@@ -206,8 +206,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+	</footer>
 <!-- Footer Section End -->
 
 <!-- Search Begin -->
@@ -231,8 +230,12 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+	// theem class description vaof textareare o form them moi san pham va form edit
+	$('.description').summernote({
+	  height: 300
+	});
+</script>
 </body>
-
-@yield('script')
-
 </html>

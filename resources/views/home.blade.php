@@ -566,4 +566,4 @@
    </div>
    <!-- Map End -->
 
-   @yield('stop')
+   @stop

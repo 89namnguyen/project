@@ -1,7 +1,6 @@
 @extends('layout.master')
 
 @section('main')
-
 <!-- Start Hero Section -->
 <div class="hero">
     <div class="container">
@@ -22,9 +21,6 @@
     </div>
 </div>
 <!-- End Hero Section -->
-
-
-
 <!-- Start Why Choose Us Section -->
 <div class="why-choose-section">
     <div class="container">
@@ -87,7 +83,6 @@
     </div>
 </div>
 <!-- End Why Choose Us Section -->
-
 <!-- Start Team Section -->
 <div class="untree_co-section">
     <div class="container">
@@ -155,9 +150,6 @@
     </div>
 </div>
 <!-- End Team Section -->
-
-
-
 <!-- Start Testimonial Slider -->
 <div class="testimonial-section before-footer-section">
     <div class="container">
@@ -255,7 +247,4 @@
     </div>
 </div>
 <!-- End Testimonial Slider -->
-
-
-
 @stop()
