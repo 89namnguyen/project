@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,8 +14,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $data= User::paginate();
-        return view('admin.user.index', compact('data'));
+        $data= Order::paginate();
+        return view('admin.order.index', compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('admin.order.create');
     }
 
     /**
@@ -36,30 +36,23 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required',
-            're_password' => 'required|same:password'
-        ]);
-
-        $formData = $request->only('name', 'email');
+        $formData = $request->all();
         $formData['password'] = bcrypt($request->password);
 
-        if (User::create($formData)) {
-            return redirect()->route('user.index')->with('success', 'Thêm mới thành công');
+        if (Order::create($formData)) {
+            return redirect()->route('order.index')->with('success', 'Thêm mới thành công');
         } else {
-            return redirect()->route('user.index')->with('error', 'Có lỗi, vui lòng thử lại');
+            return redirect()->route('order.index')->with('error', 'Có lỗi, vui lòng thử lại');
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Order $order)
     {
         
     }
@@ -67,22 +60,22 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Order $order)
     {
-        return view('admin.user.edit', compact('user'));
+        return view('admin.order.edit', compact('order'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Order $order)
     {
         //
     }
@@ -90,11 +83,12 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Order $order)
     {
-        //
+        $order->delete();
+        return redirect()->route('order.index')->with('success', 'Đã xóa thành công');
     }
 }

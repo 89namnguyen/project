@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Customer::paginate();
+        $data = Comment::paginate();
         $key = request('keyword');
 
         if ($key) {
-            $data = Customer::where('name','LIKE','%'.$key.'%')->paginate();
+            $data = Comment::where('name','LIKE','%'.$key.'%')->paginate();
         }
-        return view('admin.customer.index', compact('data'));
+        return view('admin.comment.index', compact('data'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ProductController extends Controller
     public function create()
     {
         
-        return view('admin.customer.create');
+        return view('admin.comment.create');
     }
 
     /**
@@ -46,20 +46,20 @@ class ProductController extends Controller
         $formData = $request->all('name');
         // thêm image vào magnr
         
-        if (Customer::create($formData)) {
-            return redirect()->route('customer.index')->with('success', 'Thêm mới thành công');
+        if (Comment::create($formData)) {
+            return redirect()->route('comment.index')->with('success', 'Thêm mới thành công');
         } else {
-            return redirect()->route('customer.index')->with('error', 'Có lỗi, vui lòng thử lại');
+            return redirect()->route('comment.index')->with('error', 'Có lỗi, vui lòng thử lại');
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\Comment  $Comment
      * @return \Illuminate\Http\Response
      */
-    public function show(Customer $customer)
+    public function show(Comment $comment)
     {
         //
     }
@@ -67,43 +67,43 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit(Comment $comment)
     {   
         //dd ($product);
-        return view('admin.customer.edit', compact('customer'));
+        return view('admin.comment.edit', compact('comment'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, Comment $comment)
     {
         // lấy các trường khác trên form
         $formData = $request->all('name');
         
-        if ($customer->update($formData)) {
-            return redirect()->route('customer.index')->with('success', 'Cập nhật thành công');
+        if ($comment->update($formData)) {
+            return redirect()->route('comment.index')->with('success', 'Cập nhật thành công');
         } else {
-            return redirect()->route('customer.index')->with('error', 'Có lỗi, vui lòng thử lại');
+            return redirect()->route('comment.index')->with('error', 'Có lỗi, vui lòng thử lại');
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy(Comment $comment)
     {
-        $customer->delete();
-        return redirect()->route('customer.index')->with('success', 'Đã xóa thành công');
+        $comment->delete();
+        return redirect()->route('comment.index')->with('success', 'Đã xóa thành công');
     }
 }

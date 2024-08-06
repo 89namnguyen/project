@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use App\Models\Rate;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class RateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Customer::paginate();
+        $data = Rate::paginate();
         $key = request('keyword');
 
         if ($key) {
-            $data = Customer::where('name','LIKE','%'.$key.'%')->paginate();
+            $data = Rate::where('name','LIKE','%'.$key.'%')->paginate();
         }
-        return view('admin.customer.index', compact('data'));
+        return view('admin.rate.index', compact('data'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ProductController extends Controller
     public function create()
     {
         
-        return view('admin.customer.create');
+        return view('admin.rate.create');
     }
 
     /**
@@ -46,20 +46,20 @@ class ProductController extends Controller
         $formData = $request->all('name');
         // thêm image vào magnr
         
-        if (Customer::create($formData)) {
-            return redirect()->route('customer.index')->with('success', 'Thêm mới thành công');
+        if (Rate::create($formData)) {
+            return redirect()->route('rate.index')->with('success', 'Thêm mới thành công');
         } else {
-            return redirect()->route('customer.index')->with('error', 'Có lỗi, vui lòng thử lại');
+            return redirect()->route('rate.index')->with('error', 'Có lỗi, vui lòng thử lại');
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\Rate  $rate
      * @return \Illuminate\Http\Response
      */
-    public function show(Customer $customer)
+    public function show(Rate $rate)
     {
         //
     }
@@ -67,43 +67,43 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\Rate  $rate
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit(Rate $rate)
     {   
         //dd ($product);
-        return view('admin.customer.edit', compact('customer'));
+        return view('admin.rate.edit', compact('Rate'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\Rate  $rate
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, Rate $rate)
     {
         // lấy các trường khác trên form
         $formData = $request->all('name');
         
-        if ($customer->update($formData)) {
-            return redirect()->route('customer.index')->with('success', 'Cập nhật thành công');
+        if ($rate->update($formData)) {
+            return redirect()->route('rate.index')->with('success', 'Cập nhật thành công');
         } else {
-            return redirect()->route('customer.index')->with('error', 'Có lỗi, vui lòng thử lại');
+            return redirect()->route('rate.index')->with('error', 'Có lỗi, vui lòng thử lại');
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\Rate  $rate
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy(Rate $rate)
     {
-        $customer->delete();
-        return redirect()->route('customer.index')->with('success', 'Đã xóa thành công');
+        $rate->delete();
+        return redirect()->route('rate.index')->with('success', 'Đã xóa thành công');
     }
 }

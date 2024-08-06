@@ -93,35 +93,40 @@ CREATE TABLE IF NOT EXISTS `banner` (
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `comment` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `customer_id` INT NOT NULL,
-  `content` INT NOT NULL,
-  `date` float NOT NULL,
-  PRIMARY KEY `pk_ord_d`(`order_id`,`product_id`),
-  FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
-  FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
+  `content` text NOT NULL,
+  `date` date DEFAULT NOW(),
+  PRIMARY KEY `pk_cm`(`id`),
+  FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `feedback` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `comment_id` INT NOT NULL,
   `customer_id` INT NOT NULL,
-  `content` INT NOT NULL,
-  `date` float NOT NULL,
-  PRIMARY KEY `pk_ord_d`(`order_id`,`product_id`),
-  FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
-  FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
+  `content` text NOT NULL,
+  `date` date DEFAULT NOW() ,
+  PRIMARY KEY `fb`(`id`),
+  FOREIGN KEY (`comment_id`) REFERENCES `comment` (`id`),
+  FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `reating` (
-  `id` INT NOT NULL,
+
+CREATE TABLE IF NOT EXISTS `rating` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `product_id` INT NOT NULL,
-  `quantity` INT NOT NULL,
-  `price` float NOT NULL,
-  PRIMARY KEY `pk_ord_d`(`order_id`,`product_id`),
+  `customer_id` INT NOT NULL,
+  `rate` INT NOT NULL DEFAULT '5',
+  `content` text NULL,
+  `date` date DEFAULT NOW() ,
+  PRIMARY KEY `pk_rate`(`customer_id`,`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
-  FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
+  FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)
 ) ENGINE = InnoDB;
 
+INSERT INTO `users` (name, email, password) VALUES
+('Admn Roor','admin@gmail.com','$2y$10$2po3ujcIjctrt.V5ao8i..aaSbYV7oakBdBwO8It.82CYhK4wNrZW');
 
 INSERT INTO `category` (`id`, `name`, `status`) VALUES
 (2, N'Ghế Sofa', 1),
@@ -133,9 +138,6 @@ INSERT INTO `category` (`id`, `name`, `status`) VALUES
 (8, N'Tủ Trang Trí', 1),
 (9, N'Bàn Console', 1),
 (10, N'Tủ Rượu', 1);
-
-INSERT INTO `users` (name, email, password) VALUES
-('Admn Roor','admin@gmail.com','$2y$10$2po3ujcIjctrt.V5ao8i..aaSbYV7oakBdBwO8It.82CYhK4wNrZW');
 
 INSERT INTO `customer` (`name`,`email`,`phone`,`password`,`address`) VALUES
 (N'sdasd','sdsad','dsdad','dsdsd','sdasd');
