@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `order_detail` (
-  `order_id` INT NOT NULL,
+  `order_id` INT NOT NULL AUTO_INCREMENT,
   `product_id` INT NOT NULL,
   `quantity` INT NOT NULL,
   `price` float NOT NULL,
@@ -84,20 +84,29 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `banner` (
-  `order_id` INT NOT NULL,
-  `product_id` INT NOT NULL,
-  `quantity` INT NOT NULL,
-  `price` float NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` NVARCHAR(100),
+  `img` NVARCHAR(100),
+  `link_name` NVARCHAR(100),
+  `link` NVARCHAR(100),
+  PRIMARY KEY `pk_ord_d`(`id`)
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `comment` (
+  `id` INT NOT NULL,
+  `customer_id` INT NOT NULL,
+  `content` INT NOT NULL,
+  `date` float NOT NULL,
   PRIMARY KEY `pk_ord_d`(`order_id`,`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
   FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `comment` (
-  `order_id` INT NOT NULL,
-  `product_id` INT NOT NULL,
-  `quantity` INT NOT NULL,
-  `price` float NOT NULL,
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `comment_id` INT NOT NULL,
+  `customer_id` INT NOT NULL,
+  `content` INT NOT NULL,
+  `date` float NOT NULL,
   PRIMARY KEY `pk_ord_d`(`order_id`,`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
   FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
