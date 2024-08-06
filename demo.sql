@@ -83,6 +83,37 @@ CREATE TABLE IF NOT EXISTS `order_detail` (
   FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
 ) ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `banner` (
+  `order_id` INT NOT NULL,
+  `product_id` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  `price` float NOT NULL,
+  PRIMARY KEY `pk_ord_d`(`order_id`,`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `comment` (
+  `order_id` INT NOT NULL,
+  `product_id` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  `price` float NOT NULL,
+  PRIMARY KEY `pk_ord_d`(`order_id`,`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `reating` (
+  `id` INT NOT NULL,
+  `product_id` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  `price` float NOT NULL,
+  PRIMARY KEY `pk_ord_d`(`order_id`,`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`)
+) ENGINE = InnoDB;
+
+
 INSERT INTO `category` (`id`, `name`, `status`) VALUES
 (2, N'Ghế Sofa', 1),
 (3, N'Bàn Sofa', 1),
