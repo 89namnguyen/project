@@ -6,7 +6,7 @@ class Rate extends Model
 {
     protected $table = 'rating';
     public $timestamps = false;
-    protected $fillable = ['product_id','customer_id','rate','content','date'];
+    protected $fillable = ['product_id','customer_id','rate','content','date','status'];
 
     // quan hệ 1-n -> trả về mảng => duyeentj danh sách
     public function customer() {

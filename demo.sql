@@ -97,6 +97,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `customer_id` INT NOT NULL,
   `content` text NOT NULL,
   `date` date DEFAULT NOW(),
+  `status` tinyint DEFAULT '1',
   PRIMARY KEY `pk_cm`(`id`),
   FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)
 ) ENGINE = InnoDB;
@@ -107,6 +108,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `customer_id` INT NOT NULL,
   `content` text NOT NULL,
   `date` date DEFAULT NOW() ,
+  `status` tinyint DEFAULT '1',
   PRIMARY KEY `fb`(`id`),
   FOREIGN KEY (`comment_id`) REFERENCES `comment` (`id`),
   FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)
@@ -120,7 +122,8 @@ CREATE TABLE IF NOT EXISTS `rating` (
   `rate` INT NOT NULL DEFAULT '5',
   `content` text NULL,
   `date` date DEFAULT NOW() ,
-  PRIMARY KEY `pk_rate`(`customer_id`,`product_id`),
+  `status` tinyint DEFAULT '1',
+  PRIMARY KEY `pk_rate`(`id`),
   FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
   FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)
 ) ENGINE = InnoDB;

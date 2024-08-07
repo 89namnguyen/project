@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rate;
+use App\Models\Product;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class RateController extends Controller
 {
     /**
@@ -14,13 +15,24 @@ class RateController extends Controller
      */
     public function index()
     {
-        $data = Rate::paginate();
+        //dd('vao rate');
+        $data_0 = Rate::paginate();
         $key = request('keyword');
-
+        $data = Product::select('product.id','product.name',
+                                     DB::raw('COUNT(CASE WHEN rating.rate = 5 THEN rating.id END) as _5s'),
+                                     DB::raw('COUNT(CASE WHEN rating.rate = 4 THEN rating.id END) as _4s'),
+                                     DB::raw('COUNT(CASE WHEN rating.rate = 3 THEN rating.id END) as _3s'),
+                                     DB::raw('COUNT(CASE WHEN rating.rate = 2 THEN rating.id END) as _2s'),
+                                     DB::raw('COUNT(CASE WHEN rating.rate = 1 THEN rating.id END) as _1s')
+                                     )
+                    ->leftJoin('rating', 'product.id', '=', 'rating.product_id')
+                    ->groupBy('product.id', 'product.name')
+                    ->get();
+        //d($data);
         if ($key) {
-            $data = Rate::where('name','LIKE','%'.$key.'%')->paginate();
+            $data_0 = Rate::where('name','LIKE','%'.$key.'%')->paginate();
         }
-        return view('admin.rate.index', compact('data'));
+        return view('admin.rate.index', compact('data','data_0'));
     }
 
     /**
@@ -103,7 +115,6 @@ class RateController extends Controller
      */
     public function destroy(Rate $rate)
     {
-        $rate->delete();
-        return redirect()->route('rate.index')->with('success', 'Đã xóa thành công');
+        
     }
 }

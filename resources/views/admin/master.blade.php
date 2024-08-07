@@ -12,6 +12,12 @@
   <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="assets/dist/css/skins/_all-skins.min.css">
   <link rel="stylesheet" href="assets/plugins/summernote/summernote.min.css">
+  <style>
+    a{
+      color: #000;
+    }
+
+  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -101,6 +107,22 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{route('order.index')}}"><i class="fa fa-circle-o"></i> Đơn hàng</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-solid fa-comment"></i> <span>Bình luận</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('comment.index')}}"><i class="fa fa-circle-o"></i> Danh sách</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-solid fa-star"></i> <span>Đánh giá</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('rate.index')}}"><i class="fa fa-circle-o"></i> Danh sách</a></li>
           </ul>
         </li>
       </ul>

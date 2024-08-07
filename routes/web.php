@@ -6,6 +6,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\RateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,5 +51,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::resource('user', UserController::class);
     Route::resource('blog', BlogController::class);
     Route::resource('order', OrderController::class);
+    Route::resource('comment', CommentController::class);
+    Route::resource('rate', RateController::class);
 
 });

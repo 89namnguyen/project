@@ -6,7 +6,7 @@ class Feedback extends Model
 {
     protected $table = 'feedback';
     public $timestamps = false;
-    protected $fillable = ['comment_id','customer_id','content','date'];
+    protected $fillable = ['comment_id','customer_id','content','date','status'];
 
     // quan hệ 1-n -> trả về mảng => duyeentj danh sách
     public function customer() {
