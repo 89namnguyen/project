@@ -6,12 +6,13 @@ use App\Models\Product;
 
 class HomeController extends Controller
 {
+    public $active;
     public function home() {
         $ghes = Product::where('category_id', 2)->orderBy('id','desc')->limit(3)->get();
         $bans = Product::where('category_id', 3)->get();
         $tus = Product::where('category_id', 8)->get();
-        
-        return view('home', compact('ghes','bans','tus'));
+        $active = 'home';
+        return view('home', compact('active','ghes','bans','tus'));
     }
 
     public function product(Product $product) {
@@ -23,12 +24,14 @@ class HomeController extends Controller
     //     return abort(404);
     // }
     //    dd ($product);
-        return view('product', compact('product'));
+        $active = 'product';
+        return view('product', compact('active','product'));
     }
     
 
     public function about() {
-        return view('about');
+        $active = 'about';
+        return view('about', compact('active'));
     }
     
     public function shop(Category $cat) {
@@ -38,18 +41,22 @@ class HomeController extends Controller
         if ($cat) {
             $products = Product::where('category_id', $cat->id)->orderBy('id','desc')->get();
         }
-        return view('shop', compact('cates', 'products', 'cat'));
+        $active = 'shop';
+        return view('shop', compact('cates', 'products', 'cat', 'active'));
     }
 
     public function blog() {
-        return view('blog');
+        $active = 'blog';
+        return view('blog', compact('active'));
     }
     
     public function service() {
-        return view('service');
+        $active = 'service';
+        return view('service', compact('active'));
     }
     
     public function contact() {
-        return view('contact');
+        $active = 'contact';
+        return view('contact', compact('active'));
     }
 }

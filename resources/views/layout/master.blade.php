@@ -120,21 +120,14 @@
                 <div class="col-lg-12">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./about.html">About</a></li>
-                            <li><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./wisslist.html">Wisslist</a></li>
-                                    <li><a href="./Class.html">Class</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
+                            <li class="{{ $active == 'home' ? 'active' : '' }}">
+                                <a href="/">Trang chủ</a>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li class="{{($active=='about')?'active':'';}}"><a href="/about">Giới thiệu</a></li>
+                            <li class="{{($active=='shop')?'active':'';}}"><a href="/shop">Gian hàng</a></li>
+                            <li class="{{($active=='blog')?'active':'';}}"><a href="/blog">Bảng tin</a></li>
+                            <li class="{{($active=='service')?'active':'';}}"><a href="/service">Dịch vụ</a></li>
+                            <li class="{{($active=='contact')?'active':'';}}"><a href="/contact">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>

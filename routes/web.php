@@ -23,8 +23,8 @@ use Illuminate\Support\Facades\Route;
  
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/gioi-thieu', [HomeController::class, 'about'])->name('about');
-Route::get('/dich-vu', [HomeController::class, 'service'])->name('service');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/service', [HomeController::class, 'service'])->name('service');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/shop/{cat?}', [HomeController::class, 'shop'])->name('shop');
 Route::get('/product/{product}', [HomeController::class, 'product'])->name('product');

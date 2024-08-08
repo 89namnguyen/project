@@ -1,6 +1,8 @@
 @extends('layout.master')
+@section('title', 'service')
 
 @section('main')
+
 <!-- Start Hero Section -->
 <div class="hero">
 				<div class="container">
