@@ -2,212 +2,246 @@
 
 @section('main')
 
- <!-- Breadcrumb Begin -->
- <div class="breadcrumb-option">
+<!-- Start Hero Section -->
+<div class="hero">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="breadcrumb__text">
-                    <h2>Blog</h2>
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1>Blog</h1>
+                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
+                    <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="breadcrumb__links">
-                    <a href="./index.html">Home</a>
-                    <span>Blog</span>
+            <div class="col-lg-7">
+                <div class="hero-img-wrap">
+                    <img src="images/couch.png" class="img-fluid">
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Breadcrumb End -->
+<!-- End Hero Section -->
 
-<!-- Blog Section Begin -->
-<section class="blog spad">
+
+
+<!-- Start Blog Section -->
+<div class="blog-section">
     <div class="container">
+
         <div class="row">
-            <div class="col-lg-8">
-                <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-1.jpg">
-                        <div class="blog__pic__inner">
-                            <div class="label">Recipes</div>
-                            <ul>
-                                <li>By <span>James Myers</span></li>
-                                <li>13 Nov 2020</li>
-                                <li>112 Views</li>
-                            </ul>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="post-entry">
+                    <a href="#" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content-entry">
+                        <h3><a href="#">First Time Home Owner Ideas</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19, 2021</a></span>
                         </div>
                     </div>
-                    <div class="blog__item__text">
-                        <h2>Delivering Kisses And Miracles</h2>
-                        <p>Herbs are fun and easy to grow. When harvested they make even the simplest meal seem like
-                            a gourmet delight. By using herbs in your cooking you can easily change the flavors of
-                        your recipes in many different ways, according to which herbs you add...</p>
-                        <a href="#">READ MORE</a>
-                    </div>
-                </div>
-                <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-2.jpg">
-                        <div class="blog__pic__inner">
-                            <div class="label">Recipes</div>
-                            <ul>
-                                <li>By <span>James Myers</span></li>
-                                <li>13 Nov 2020</li>
-                                <li>112 Views</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="blog__item__text">
-                        <h2>Make Grilling A Healthy Experience</h2>
-                        <p>Herbs are fun and easy to grow. When harvested they make even the simplest meal seem like
-                            a gourmet delight. By using herbs in your cooking you can easily change the flavors of
-                        your recipes in many different ways, according to which herbs you add...</p>
-                        <a href="#">READ MORE</a>
-                    </div>
-                </div>
-                <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-3.jpg">
-                        <div class="blog__pic__inner">
-                            <div class="label">Recipes</div>
-                            <ul>
-                                <li>By <span>James Myers</span></li>
-                                <li>13 Nov 2020</li>
-                                <li>112 Views</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="blog__item__text">
-                        <h2>Bbq Myths Getting You Down</h2>
-                        <p>Herbs are fun and easy to grow. When harvested they make even the simplest meal seem like
-                            a gourmet delight. By using herbs in your cooking you can easily change the flavors of
-                        your recipes in many different ways, according to which herbs you add...</p>
-                        <a href="#">READ MORE</a>
-                    </div>
-                </div>
-                <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-4.jpg">
-                        <div class="blog__pic__inner">
-                            <div class="label">Recipes</div>
-                            <ul>
-                                <li>By <span>James Myers</span></li>
-                                <li>13 Nov 2020</li>
-                                <li>112 Views</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="blog__item__text">
-                        <h2>Keep That Cooking Area Clean</h2>
-                        <p>Herbs are fun and easy to grow. When harvested they make even the simplest meal seem like
-                            a gourmet delight. By using herbs in your cooking you can easily change the flavors of
-                        your recipes in many different ways, according to which herbs you add...</p>
-                        <a href="#">READ MORE</a>
-                    </div>
-                </div>
-                <div class="shop__pagination">
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#"><span class="arrow_carrot-right"></span></a>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="blog__sidebar">
-                    <div class="blog__sidebar__search">
-                        <form action="#">
-                            <input type="text" placeholder="Enter keyword">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-                    <div class="blog__sidebar__item">
-                        <h5>Follow me</h5>
-                        <div class="blog__sidebar__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog__sidebar__item">
-                        <h5>Popular posts</h5>
 
-                        <div class="blog__sidebar__recent">
-                            <a href="#" class="blog__sidebar__recent__item">
-                                <div class="blog__sidebar__recent__item__pic">
-                                    <img src="img/blog/br-1.jpg" alt="">
-                                </div>
-                                <div class="blog__sidebar__recent__item__text">
-                                    <h4>Secret To Cooking Vegetables</h4>
-                                    <span>13 Nov 2020</span>
-                                </div>
-                            </a>
-                            <a href="#" class="blog__sidebar__recent__item">
-                                <div class="blog__sidebar__recent__item__pic">
-                                    <img src="img/blog/br-2.jpg" alt="">
-                                </div>
-                                <div class="blog__sidebar__recent__item__text">
-                                    <h4>Bbq Myths Getting You Down</h4>
-                                    <span>13 Nov 2020</span>
-                                </div>
-                            </a>
-                            <a href="#" class="blog__sidebar__recent__item">
-                                <div class="blog__sidebar__recent__item__pic">
-                                    <img src="img/blog/br-3.jpg" alt="">
-                                </div>
-                                <div class="blog__sidebar__recent__item__text">
-                                    <h4>Save Money The Crock Pot Way</h4>
-                                    <span>13 Nov 2020</span>
-                                </div>
-                            </a>
-                            <a href="#" class="blog__sidebar__recent__item">
-                                <div class="blog__sidebar__recent__item__pic">
-                                    <img src="img/blog/br-4.jpg" alt="">
-                                </div>
-                                <div class="blog__sidebar__recent__item__text">
-                                    <h4>Grilling Tips For The Dog Days Of Summer</h4>
-                                    <span>13 Nov 2020</span>
-                                </div>
-                            </a>
-                            <a href="#" class="blog__sidebar__recent__item">
-                                <div class="blog__sidebar__recent__item__pic">
-                                    <img src="img/blog/br-5.jpg" alt="">
-                                </div>
-                                <div class="blog__sidebar__recent__item__text">
-                                    <h4>Barbeque Techniques Two Methods To Consider</h4>
-                                    <span>13 Nov 2020</span>
-                                </div>
-                            </a>
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="post-entry">
+                    <a href="#" class="post-thumbnail"><img src="images/post-2.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content-entry">
+                        <h3><a href="#">How To Keep Your Furniture Clean</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
                         </div>
                     </div>
-                    <div class="blog__sidebar__item">
-                        <h5>Categories</h5>
-                        <div class="blog__sidebar__item__categories">
-                            <ul>
-                                <li><a href="#">Repice <span>36</span></a></li>
-                                <li><a href="#">Guides <span>18</span></a></li>
-                                <li><a href="#">News <span>09</span></a></li>
-                                <li><a href="#">Videos <span>12</span></a></li>
-                                <li><a href="#">Trending <span>27</span></a></li>
-                            </ul>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="post-entry">
+                    <a href="#" class="post-thumbnail"><img src="images/post-3.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content-entry">
+                        <h3><a href="#">Small Space Furniture Apartment Ideas</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12, 2021</a></span>
                         </div>
                     </div>
-                    <div class="blog__sidebar__item">
-                        <h5>NEWsLETTeR</h5>
-                        <p>Subscribe to our newsletter and get our newest updates right on your inbox.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Your email">
-                            <label for="agg">
-                                I agree to the terms & conditions
-                                <input type="checkbox" id="agg">
-                                <span class="checkmark"></span>
-                            </label>
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="post-entry">
+                    <a href="#" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content-entry">
+                        <h3><a href="#">First Time Home Owner Ideas</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19, 2021</a></span>
+                        </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="post-entry">
+                    <a href="#" class="post-thumbnail"><img src="images/post-2.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content-entry">
+                        <h3><a href="#">How To Keep Your Furniture Clean</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="post-entry">
+                    <a href="#" class="post-thumbnail"><img src="images/post-3.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content-entry">
+                        <h3><a href="#">Small Space Furniture Apartment Ideas</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12, 2021</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="post-entry">
+                    <a href="#" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content-entry">
+                        <h3><a href="#">First Time Home Owner Ideas</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19, 2021</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="post-entry">
+                    <a href="#" class="post-thumbnail"><img src="images/post-2.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content-entry">
+                        <h3><a href="#">How To Keep Your Furniture Clean</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="post-entry">
+                    <a href="#" class="post-thumbnail"><img src="images/post-3.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content-entry">
+                        <h3><a href="#">Small Space Furniture Apartment Ideas</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12, 2021</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End Blog Section -->
+
+
+
+<!-- Start Testimonial Slider -->
+<div class="testimonial-section before-footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 mx-auto text-center">
+                <h2 class="section-title">Testimonials</h2>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="testimonial-slider-wrap text-center">
+
+                    <div id="testimonial-nav">
+                        <span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+                        <span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+                    </div>
+
+                    <div class="testimonial-slider">
+
+                        <div class="item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 mx-auto">
+
+                                    <div class="testimonial-block text-center">
+                                        <blockquote class="mb-5">
+                                            <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
+                                        </blockquote>
+
+                                        <div class="author-info">
+                                            <div class="author-pic">
+                                                <img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
+                                            </div>
+                                            <h3 class="font-weight-bold">Maria Jones</h3>
+                                            <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END item -->
+
+                        <div class="item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 mx-auto">
+
+                                    <div class="testimonial-block text-center">
+                                        <blockquote class="mb-5">
+                                            <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
+                                        </blockquote>
+
+                                        <div class="author-info">
+                                            <div class="author-pic">
+                                                <img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
+                                            </div>
+                                            <h3 class="font-weight-bold">Maria Jones</h3>
+                                            <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END item -->
+
+                        <div class="item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 mx-auto">
+
+                                    <div class="testimonial-block text-center">
+                                        <blockquote class="mb-5">
+                                            <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
+                                        </blockquote>
+
+                                        <div class="author-info">
+                                            <div class="author-pic">
+                                                <img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
+                                            </div>
+                                            <h3 class="font-weight-bold">Maria Jones</h3>
+                                            <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END item -->
+
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!-- Blog Section End -->
+</div>
+<!-- End Testimonial Slider -->
 
 @stop()
