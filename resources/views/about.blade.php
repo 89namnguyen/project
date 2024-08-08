@@ -1,250 +1,305 @@
 @extends('layout.master')
 
 @section('main')
-<!-- Start Hero Section -->
-<div class="hero">
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-lg-5">
-                <div class="intro-excerpt">
-                    <h1>About Us</h1>
-                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-                    <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="hero-img-wrap">
-                    <img src="images/couch.png" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Hero Section -->
-<!-- Start Why Choose Us Section -->
-<div class="why-choose-section">
-    <div class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-lg-6">
-                <h2 class="section-title">Why Choose Us</h2>
-                <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
 
-                <div class="row my-5">
-                    <div class="col-6 col-md-6">
-                        <div class="feature">
-                            <div class="icon">
-                                <img src="images/truck.svg" alt="Image" class="imf-fluid">
-                            </div>
-                            <h3>Fast &amp; Free Shipping</h3>
-                            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-6">
-                        <div class="feature">
-                            <div class="icon">
-                                <img src="images/bag.svg" alt="Image" class="imf-fluid">
-                            </div>
-                            <h3>Easy to Shop</h3>
-                            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-6">
-                        <div class="feature">
-                            <div class="icon">
-                                <img src="images/support.svg" alt="Image" class="imf-fluid">
-                            </div>
-                            <h3>24/7 Support</h3>
-                            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-6">
-                        <div class="feature">
-                            <div class="icon">
-                                <img src="images/return.svg" alt="Image" class="imf-fluid">
-                            </div>
-                            <h3>Hassle Free Returns</h3>
-                            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-lg-5">
-                <div class="img-wrap">
-                    <img src="images/why-choose-us-img.jpg" alt="Image" class="img-fluid">
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- End Why Choose Us Section -->
-<!-- Start Team Section -->
-<div class="untree_co-section">
-    <div class="container">
-
-        <div class="row mb-5">
-            <div class="col-lg-5 mx-auto text-center">
-                <h2 class="section-title">Our Team</h2>
-            </div>
-        </div>
-
-        <div class="row">
-
-            <!-- Start Column 1 -->
-            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-                <img src="images/person_1.jpg" class="img-fluid mb-5">
-                <h3 clas><a href="#"><span class="">Lawson</span> Arnold</a></h3>
-                <span class="d-block position mb-4">CEO, Founder, Atty.</span>
-                <p>Separated they live in.
-                    Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
-            </div>
-            <!-- End Column 1 -->
-
-            <!-- Start Column 2 -->
-            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-                <img src="images/person_2.jpg" class="img-fluid mb-5">
-
-                <h3 clas><a href="#"><span class="">Jeremy</span> Walker</a></h3>
-                <span class="d-block position mb-4">CEO, Founder, Atty.</span>
-                <p>Separated they live in.
-                    Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
-
-            </div>
-            <!-- End Column 2 -->
-
-            <!-- Start Column 3 -->
-            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-                <img src="images/person_3.jpg" class="img-fluid mb-5">
-                <h3 clas><a href="#"><span class="">Patrik</span> White</a></h3>
-                <span class="d-block position mb-4">CEO, Founder, Atty.</span>
-                <p>Separated they live in.
-                    Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
-            </div>
-            <!-- End Column 3 -->
-
-            <!-- Start Column 4 -->
-            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-                <img src="images/person_4.jpg" class="img-fluid mb-5">
-
-                <h3 clas><a href="#"><span class="">Kathryn</span> Ryan</a></h3>
-                <span class="d-block position mb-4">CEO, Founder, Atty.</span>
-                <p>Separated they live in.
-                    Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
-
-
-            </div>
-            <!-- End Column 4 -->
-
-
-
-        </div>
-    </div>
-</div>
-<!-- End Team Section -->
-<!-- Start Testimonial Slider -->
-<div class="testimonial-section before-footer-section">
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 mx-auto text-center">
-                <h2 class="section-title">Testimonials</h2>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="breadcrumb__text">
+                    <h2>About</h2>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="breadcrumb__links">
+                    <a href="./index.html">Home</a>
+                    <span>About</span>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
 
-        <div class="row justify-content-center">
+<!-- About Section Begin -->
+<section class="about spad">
+    <div class="container">
+        <div class="row">
             <div class="col-lg-12">
-                <div class="testimonial-slider-wrap text-center">
-
-                    <div id="testimonial-nav">
-                        <span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
-                        <span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+                <div class="about__video set-bg" data-setbg="img/about-video.jpg">
+                    <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1"
+                    class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="about__text">
+                    <div class="section-title">
+                        <span>About Cake shop</span>
+                        <h2>Cakes and bakes from the house of Queens!</h2>
                     </div>
-
-                    <div class="testimonial-slider">
-
-                        <div class="item">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8 mx-auto">
-
-                                    <div class="testimonial-block text-center">
-                                        <blockquote class="mb-5">
-                                            <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-                                        </blockquote>
-
-                                        <div class="author-info">
-                                            <div class="author-pic">
-                                                <img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-                                            </div>
-                                            <h3 class="font-weight-bold">Maria Jones</h3>
-                                            <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                    <p>The "Cake Shop" is a Jordanian Brand that started as a small family business. The owners are
+                    Dr. Iyad Sultan and Dr. Sereen Sharabati, supported by a staff of 80 employees.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="about__bar">
+                    <div class="about__bar__item">
+                        <p>Cake design</p>
+                        <div id="bar1" class="barfiller">
+                            <div class="tipWrap"><span class="tip"></span></div>
+                            <span class="fill" data-percentage="95"></span>
                         </div>
-                        <!-- END item -->
-
-                        <div class="item">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8 mx-auto">
-
-                                    <div class="testimonial-block text-center">
-                                        <blockquote class="mb-5">
-                                            <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-                                        </blockquote>
-
-                                        <div class="author-info">
-                                            <div class="author-pic">
-                                                <img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-                                            </div>
-                                            <h3 class="font-weight-bold">Maria Jones</h3>
-                                            <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END item -->
-
-                        <div class="item">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8 mx-auto">
-
-                                    <div class="testimonial-block text-center">
-                                        <blockquote class="mb-5">
-                                            <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-                                        </blockquote>
-
-                                        <div class="author-info">
-                                            <div class="author-pic">
-                                                <img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-                                            </div>
-                                            <h3 class="font-weight-bold">Maria Jones</h3>
-                                            <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END item -->
-
                     </div>
-
+                    <div class="about__bar__item">
+                        <p>Cake Class</p>
+                        <div id="bar2" class="barfiller">
+                            <div class="tipWrap"><span class="tip"></span></div>
+                            <span class="fill" data-percentage="80"></span>
+                        </div>
+                    </div>
+                    <div class="about__bar__item">
+                        <p>Cake Recipes</p>
+                        <div id="bar3" class="barfiller">
+                            <div class="tipWrap"><span class="tip"></span></div>
+                            <span class="fill" data-percentage="90"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End Testimonial Slider -->
+</section>
+<!-- About Section End -->
+
+<!-- Testimonial Section Begin -->
+<section class="testimonial spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <span>Testimonial</span>
+                    <h2>Our client say</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="testimonial__slider owl-carousel">
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="img/testimonial/ta-1.jpg" alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Kerry D.Silva</h5>
+                                <span>New york</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="img/testimonial/ta-2.jpg" alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Kerry D.Silva</h5>
+                                <span>New york</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="img/testimonial/ta-1.jpg" alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Ophelia Nunez</h5>
+                                <span>London</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="img/testimonial/ta-2.jpg" alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Kerry D.Silva</h5>
+                                <span>New york</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="img/testimonial/ta-1.jpg" alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Ophelia Nunez</h5>
+                                <span>London</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial__item">
+                        <div class="testimonial__author">
+                            <div class="testimonial__author__pic">
+                                <img src="img/testimonial/ta-2.jpg" alt="">
+                            </div>
+                            <div class="testimonial__author__text">
+                                <h5>Kerry D.Silva</h5>
+                                <span>New york</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star"></span>
+                            <span class="icon_star-half_alt"></span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonial Section End -->
+
+<!-- Team Section Begin -->
+<section class="team spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                <div class="section-title">
+                    <span>Our team</span>
+                    <h2>Sweet Baker </h2>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="team__btn">
+                    <a href="#" class="primary-btn">Join Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3  col-md-6 col-sm-6">
+                <div class="team__item set-bg" data-setbg="img/team/team-1.jpg">
+                    <div class="team__item__text">
+                        <h6>Randy Butler</h6>
+                        <span>Decorater</span>
+                        <div class="team__item__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3  col-md-6 col-sm-6">
+                <div class="team__item set-bg" data-setbg="img/team/team-2.jpg">
+                    <div class="team__item__text">
+                        <h6>Randy Butler</h6>
+                        <span>Decorater</span>
+                        <div class="team__item__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3  col-md-6 col-sm-6">
+                <div class="team__item set-bg" data-setbg="img/team/team-3.jpg">
+                    <div class="team__item__text">
+                        <h6>Randy Butler</h6>
+                        <span>Decorater</span>
+                        <div class="team__item__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3  col-md-6 col-sm-6">
+                <div class="team__item set-bg" data-setbg="img/team/team-4.jpg">
+                    <div class="team__item__text">
+                        <h6>Randy Butler</h6>
+                        <span>Decorater</span>
+                        <div class="team__item__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Team Section End -->
 @stop()
