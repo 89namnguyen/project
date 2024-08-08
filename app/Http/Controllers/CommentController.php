@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Feedback;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class CommentController extends Controller
 {
     /**
@@ -16,11 +17,14 @@ class CommentController extends Controller
     {
         $data = Comment::paginate();
         $key = request('keyword');
-
+        $data_0 = Feedback::select('feedback.id','feedback.date','feedback.status','customer.name as customer')
+                    ->leftJoin('customer', 'customer.id', '=', 'feedback.customer_id')
+                    ->groupBy('feedback.id','feedback.date','feedback.status','customer.name')
+                    ->get();
         if ($key) {
             $data = Comment::where('name','LIKE','%'.$key.'%')->paginate();
         }
-        return view('admin.comment.index', compact('data'));
+        return view('admin.comment.index', compact('data','data_0'));
     }
 
     /**
