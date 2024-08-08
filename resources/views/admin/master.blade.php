@@ -172,6 +172,7 @@
 <script src="assets/plugins/summernote/summernote.min.js"></script>
 <script src="assets/dist/js/app.min.js"></script>
 <script src="assets/dist/js/demo.js"></script>
+
 <script>
   // theem class description vaof textareare o form them moi san pham va form edit
   $('.description').summernote({
