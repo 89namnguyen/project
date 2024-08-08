@@ -172,7 +172,27 @@
 <script src="assets/plugins/summernote/summernote.min.js"></script>
 <script src="assets/dist/js/app.min.js"></script>
 <script src="assets/dist/js/demo.js"></script>
-
+<script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script>
+        $(document).ready(function(){
+            $('.clk_5s').click(function(){
+                $('.5s').toggle(); // Chuyển đổi trạng thái hiển thị
+            });
+            $('.clk_4s').click(function(){
+                $('.4s').toggle(); // Chuyển đổi trạng thái hiển thị
+            });
+            $('.clk_3s').click(function(){
+                $('.3s').toggle(); // Chuyển đổi trạng thái hiển thị
+            });
+            $('.clk_2s').click(function(){
+                $('.2s').toggle(); // Chuyển đổi trạng thái hiển thị
+            });
+            $('.clk_1s').click(function(){
+                $('.1s').toggle(); // Chuyển đổi trạng thái hiển thị
+            });
+        });
+    </script>
 <script>
   // theem class description vaof textareare o form them moi san pham va form edit
   $('.description').summernote({

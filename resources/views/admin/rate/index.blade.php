@@ -31,11 +31,11 @@
         <tr>
             <td><b>{{$object->id}}</b></td>
             <td><b>{{$object->name}}</b></td>
-            <td><a class="clk_5s" href="#">{{$object->_5s}}</a></td>
-            <td><a class="clk_4s" href="#">{{$object->_4s}}</a></td>
-            <td><a class="clk_3s" href="#">{{$object->_3s}}</a></td>
-            <td><a class="clk_2s" href="#">{{$object->_2s}}</a></td>
-            <td><a class="clk_1s" href="#">{{$object->_1s}}</a></td>
+            <td><b class="clk_5s" >{{$object->_5s}}</b></td>
+            <td><b class="clk_4s" >{{$object->_4s}}</b></td>
+            <td><b class="clk_3s" >{{$object->_3s}}</b></td>
+            <td><b class="clk_2s" >{{$object->_2s}}</b></td>
+            <td><b class="clk_1s" >{{$object->_1s}}</b></td>
             <td>{{($object->_1s*1+$object->_2s*2+$object->_3s*3+$object->_4s*4+$object->_5s*5)/(($object->_1s+$object->_2s+$object->_3s+$object->_4s+$object->_5s)==0)?1:($object->_1s+$object->_2s+$object->_3s+$object->_4s+$object->_5s)}}</td>
             <td>
                 <a href="{{ route('rate.edit', $object->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> Ẩn</a>
