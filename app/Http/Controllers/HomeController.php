@@ -50,11 +50,6 @@ class HomeController extends Controller
         return view('blog', compact('active'));
     }
     
-    public function service() {
-        $active = 'service';
-        return view('service', compact('active'));
-    }
-    
     public function contact() {
         $active = 'contact';
         return view('contact', compact('active'));

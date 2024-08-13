@@ -90,6 +90,7 @@ select:focus,
 button:focus,
 textarea:focus {
   outline: none;
+  border: none;
 }
 
 a:hover,
@@ -432,12 +433,12 @@ ol {
   margin-right: 6px;
 }
 .header__top__right__cart a span {
-  font-size: 15px;
+  font-size: 10px;
   color: #111111;
   font-weight: 600;
   position: absolute;
-  left: 7px;
-  top: 4px;
+  left: 6px;
+  top: 10px;
 }
 .header__top__right__cart .cart__price {
   display: inline-block;

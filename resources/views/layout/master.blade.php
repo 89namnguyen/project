@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cake | Template</title>
     
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
@@ -27,6 +28,33 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <style>
+        .home__search{
+            background-color: #fff;
+            border-radius: 10px;
+            margin-left: 40px
+        }
+        .home__search input{
+            background-color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding-left: 15px
+        }
+       
+        .home__search button{
+            background-color:#fff;
+            width: 30px;
+            height: 30px;
+            border: none;
+            padding-bottom: 30px;
+            border-radius: 10px;
+            margin-right: 10px
+        }
+        .home__search button i{
+            color:#f08632;
+            font-size:16px;
+        }
+    </style>
 </head>
 
 <body>
@@ -101,11 +129,10 @@
                             </div>
                             <div class="header__top__right">
                                 <div class="header__top__right__links">
-                                    <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
                                     <a href="#"><img src="img/icon/heart.png" alt=""></a>
                                 </div>
                                 <div class="header__top__right__cart">
-                                    <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                                    <a href="#"><img src="img/icon/cart.png" alt=""> <span>00</span></a>
                                     <div class="cart__price">Cart: <span>$0.00</span></div>
                                 </div>
                             </div>
@@ -121,13 +148,20 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="{{ $active == 'home' ? 'active' : '' }}">
-                                <a href="/">Trang chủ</a>
+                                <a href="/">Home</a>
                             </li>
-                            <li class="{{($active=='about')?'active':'';}}"><a href="/about">Giới thiệu</a></li>
-                            <li class="{{($active=='shop')?'active':'';}}"><a href="/shop">Gian hàng</a></li>
-                            <li class="{{($active=='blog')?'active':'';}}"><a href="/blog">Bảng tin</a></li>
-                            <li class="{{($active=='service')?'active':'';}}"><a href="/service">Dịch vụ</a></li>
-                            <li class="{{($active=='contact')?'active':'';}}"><a href="/contact">Liên hệ</a></li>
+                            <li class="{{($active=='about')?'active':'';}}"><a href="/about">About</a></li>
+                            <li class="{{($active=='shop')?'active':'';}}"><a href="/shop">Shop</a></li>
+                            <li class="{{($active=='blog')?'active':'';}}"><a href="/blog">Blog</a></li>
+                            <li class="{{($active=='contact')?'active':'';}}"><a href="/contact">Contact</a></li>
+                            <li>
+                                <div class="home__search">
+                                    <form action="" method="GET"  role="form">
+                                        <input name="keyword" placeholder="search..." style="   width: 100px;height: 30px;">
+                                        <button type="submit" class="btn btn-primary" style=""><i class="fas fa-search" style=""></i></button>
+                                    </form>
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -201,17 +235,6 @@
         </div>
 	</footer>
 <!-- Footer Section End -->
-
-<!-- Search Begin -->
-<div class="search-model">
-    <div class="h-100 d-flex align-items-center justify-content-center">
-        <div class="search-close-switch">+</div>
-        <form class="search-model-form">
-            <input type="text" id="search-input" placeholder="Search here.....">
-        </form>
-    </div>
-</div>
-<!-- Search End -->
 
 <!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>
