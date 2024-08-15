@@ -29,7 +29,8 @@
             <td>{{$object->id}}</td>
             <td>{{$object->name}}</td>
             <td>{{$object->email}}</td>
-            <td>{{$object->created_at->format('d/m/Y')}}</td>
+            <td>{{$object->date}}</td>
+            {{-- ->format('d/m/Y') --}}
             <td class="text-right">
                 <form action="{{ route('user.destroy', $object->id) }}" method="post">
                     @csrf @method('DELETE')

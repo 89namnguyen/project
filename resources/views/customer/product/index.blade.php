@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('title', 'Quản lý danh mục')
+@section('title', 'Quản lý sản phẩm')
 @section('main')
 
 <form action="" method="GET" class="form-inline" role="form">

@@ -43,9 +43,15 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // lấy các trường khác trên form
-        $formData = $request->all('name');
-        // thêm image vào magnr
-        
+        $formData = $request->all();
+        // thêm image vào mag
+        if ($request->img) {
+            $img_name = time().'_'. $request->img->getClientOriginalName();
+            $request->img->move(public_path('uploads'), $img_name);
+        }else{
+            $img_name = 'comment-1.jpg';
+        }
+        $formData['image'] = $img_name;
         if (Customer::create($formData)) {
             return redirect()->route('customer.index')->with('success', 'Thêm mới thành công');
         } else {

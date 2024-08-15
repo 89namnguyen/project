@@ -3,38 +3,44 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Blog;
+use App\Models\Rate;
+use App\Models\Shop_info;
 
 class HomeController extends Controller
 {
     public $active;
+    public function __construct()
+    {
+    }
     public function home() {
-        $ghes = Product::where('category_id', 2)->orderBy('id','desc')->limit(3)->get();
-        $bans = Product::where('category_id', 3)->get();
-        $tus = Product::where('category_id', 8)->get();
         $active = 'home';
-        return view('home', compact('active','ghes','bans','tus'));
+        $shop_info = Shop_info::where('level', 1)->first();
+        $rates= Rate::where('rate', 5)->inRandomOrder()->orderBy('date','DESC')->limit(6)->get();
+        $cats = Category::orderBy('name', 'asc')->get();
+        $products = Product::where('status', 1)->orderBy('date','DESC')->limit(3)->get();
+        $SaleProducts = Product::where('status', 1)->where('sale_price','>', 0)->orderBy('date','DESC')->limit(3)->get();
+        $randomProducts = Product::where('status', 1)->where('sale_price','>', 0)->inRandomOrder()->limit(8)->get();
+        $blogs = Blog::where('status', 1)->orderBy('date','DESC')->limit(3)->get();
+        return view('home', compact('shop_info','rates','cats','products','blogs','SaleProducts','randomProducts','active'));
+
     }
 
     public function product(Product $product) {
-    //    $product = Product::find($id);
-    //    $product = Product::where('id', $id)->first();
-    // if ($product) {
-
-    // } else {
-    //     return abort(404);
-    // }
-    //    dd ($product);
+        $shop_info = Shop_info::where('level', 1)->first();
         $active = 'product';
-        return view('product', compact('active','product'));
+        return view('product', compact('active','product','shop_info'));
     }
     
 
     public function about() {
+        $shop_info = Shop_info::where('level', 1)->first();
         $active = 'about';
-        return view('about', compact('active'));
+        return view('about', compact('active','shop_info'));
     }
     
     public function shop(Category $cat) {
+        $shop_info = Shop_info::where('level', 1)->first();
         $cates = Category::orderBy('name', 'asc')->get();
         $products = Product::orderBy('id','desc')->get();
         
@@ -42,16 +48,18 @@ class HomeController extends Controller
             $products = Product::where('category_id', $cat->id)->orderBy('id','desc')->get();
         }
         $active = 'shop';
-        return view('shop', compact('cates', 'products', 'cat', 'active'));
+        return view('shop', compact('cates', 'products', 'cat', 'active','shop_info'));
     }
 
     public function blog() {
+        $shop_info = Shop_info::where('level', 1)->first();
         $active = 'blog';
-        return view('blog', compact('active'));
+        return view('blog', compact('active','shop_info'));
     }
     
     public function contact() {
+        $shop_info = Shop_info::where('level', 1)->first();
         $active = 'contact';
-        return view('contact', compact('active'));
+        return view('contact', compact('active','shop_info'));
     }
 }
