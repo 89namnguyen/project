@@ -40,7 +40,7 @@
                <div class="col-lg-6 col-md-6">
                    <div class="about__text">
                        <div class="section-title">
-                           <span>About Cake shop</span>
+                           <span>About {{$shop_info->name}}</span>
                            <h2>Cakes and bakes from the house of Queens!</h2>
                        </div>
                        <p>The "Cake Shop" is a Jordanian Brand that started as a small family business. The owners are
@@ -82,42 +82,17 @@
        <div class="container">
            <div class="row">
                <div class="categories__slider owl-carousel">
-                   <div class="categories__item">
-                       <div class="categories__item__icon">
-                           <span class="flaticon-029-cupcake-3"></span>
-                           <h5>Cupcake</h5>
-                       </div>
-                   </div>
-                   <div class="categories__item">
-                       <div class="categories__item__icon">
-                           <span class="flaticon-034-chocolate-roll"></span>
-                           <h5>Butter</h5>
-                       </div>
-                   </div>
-                   <div class="categories__item">
-                       <div class="categories__item__icon">
-                           <span class="flaticon-005-pancake"></span>
-                           <h5>Red Velvet</h5>
-                       </div>
-                   </div>
-                   <div class="categories__item">
-                       <div class="categories__item__icon">
-                           <span class="flaticon-030-cupcake-2"></span>
-                           <h5>Biscuit</h5>
-                       </div>
-                   </div>
-                   <div class="categories__item">
-                       <div class="categories__item__icon">
-                           <span class="flaticon-006-macarons"></span>
-                           <h5>Donut</h5>
-                       </div>
-                   </div>
-                   <div class="categories__item">
-                       <div class="categories__item__icon">
-                           <span class="flaticon-006-macarons"></span>
-                           <h5>Cupcake</h5>
-                       </div>
-                   </div>
+                   @foreach ($cats as $cat) 
+                    <div class="categories__item">
+                        <div class="categories__item__icon">
+                            <a href="{{route('shop', $cat->id)}}">
+                                <span class="{{$cat->icon}}"></span>
+                                <h5>{{$cat->name}}</h5>
+                            </a>
+                        </div>
+                    </div>
+                    
+                   @endforeach
                </div>
            </div>
        </div>
@@ -128,134 +103,31 @@
    <section class="product spad">
        <div class="container">
            <div class="row">
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                   <div class="product__item">
-                       <div class="product__item__pic set-bg" data-setbg="img/shop/product-1.jpg">
-                           <div class="product__label">
-                               <span>Cupcake</span>
-                           </div>
-                       </div>
-                       <div class="product__item__text">
-                           <h6><a href="#">Dozen Cupcakes</a></h6>
-                           <div class="product__item__price">$32.00</div>
-                           <div class="cart_add">
-                               <a href="#">Add to cart</a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                   <div class="product__item">
-                       <div class="product__item__pic set-bg" data-setbg="img/shop/product-2.jpg">
-                           <div class="product__label">
-                               <span>Cupcake</span>
-                           </div>
-                       </div>
-                       <div class="product__item__text">
-                           <h6><a href="#">Cookies and Cream</a></h6>
-                           <div class="product__item__price">$30.00</div>
-                           <div class="cart_add">
-                               <a href="#">Add to cart</a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                   <div class="product__item">
-                       <div class="product__item__pic set-bg" data-setbg="img/shop/product-3.jpg">
-                           <div class="product__label">
-                               <span>Cupcake</span>
-                           </div>
-                       </div>
-                       <div class="product__item__text">
-                           <h6><a href="#">Gluten Free Mini Dozen</a></h6>
-                           <div class="product__item__price">$31.00</div>
-                           <div class="cart_add">
-                               <a href="#">Add to cart</a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                   <div class="product__item">
-                       <div class="product__item__pic set-bg" data-setbg="img/shop/product-4.jpg">
-                           <div class="product__label">
-                               <span>Cupcake</span>
-                           </div>
-                       </div>
-                       <div class="product__item__text">
-                           <h6><a href="#">Cookie Dough</a></h6>
-                           <div class="product__item__price">$25.00</div>
-                           <div class="cart_add">
-                               <a href="#">Add to cart</a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                   <div class="product__item">
-                       <div class="product__item__pic set-bg" data-setbg="img/shop/product-5.jpg">
-                           <div class="product__label">
-                               <span>Cupcake</span>
-                           </div>
-                       </div>
-                       <div class="product__item__text">
-                           <h6><a href="#">Vanilla Salted Caramel</a></h6>
-                           <div class="product__item__price">$05.00</div>
-                           <div class="cart_add">
-                               <a href="#">Add to cart</a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                   <div class="product__item">
-                       <div class="product__item__pic set-bg" data-setbg="img/shop/product-6.jpg">
-                           <div class="product__label">
-                               <span>Cupcake</span>
-                           </div>
-                       </div>
-                       <div class="product__item__text">
-                           <h6><a href="#">German Chocolate</a></h6>
-                           <div class="product__item__price">$14.00</div>
-                           <div class="cart_add">
-                               <a href="#">Add to cart</a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                   <div class="product__item">
-                       <div class="product__item__pic set-bg" data-setbg="img/shop/product-7.jpg">
-                           <div class="product__label">
-                               <span>Cupcake</span>
-                           </div>
-                       </div>
-                       <div class="product__item__text">
-                           <h6><a href="#">Dulce De Leche</a></h6>
-                           <div class="product__item__price">$32.00</div>
-                           <div class="cart_add">
-                               <a href="#">Add to cart</a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-sm-6">
-                   <div class="product__item">
-                       <div class="product__item__pic set-bg" data-setbg="img/shop/product-8.jpg">
-                           <div class="product__label">
-                               <span>Cupcake</span>
-                           </div>
-                       </div>
-                       <div class="product__item__text">
-                           <h6><a href="#">Mississippi Mud</a></h6>
-                           <div class="product__item__price">$08.00</div>
-                           <div class="cart_add">
-                               <a href="#">Add to cart</a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
+               @foreach ($products as $product) 
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="uploads/{{$product->image}}">
+                            <div class="product__label">
+                                <span>{{$product->cat->name}}</span>
+                            </div>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">{{$product->name}}</a></h6>
+                            <div class="product__item__price">
+                                @if ($product->sale_price > 0)
+                                    <b><span>$</span> {{number_format($product->sale_price)}}</b>
+                                    <s><span>$</span> {{number_format($product->price)}}</s>
+                                @else
+                                    <span>$</span> {{number_format($product->price)}}
+                                @endif
+                            </div>
+                            <div class="cart_add">
+                                <a href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               @endforeach
            </div>
        </div>
    </section>
@@ -384,138 +256,29 @@
            </div>
            <div class="row">
                <div class="testimonial__slider owl-carousel">
-                   <div class="col-lg-6">
-                       <div class="testimonial__item">
-                           <div class="testimonial__author">
-                               <div class="testimonial__author__pic">
-                                   <img src="img/testimonial/ta-1.jpg" alt="">
-                               </div>
-                               <div class="testimonial__author__text">
-                                   <h5>Kerry D.Silva</h5>
-                                   <span>New york</span>
-                               </div>
-                           </div>
-                           <div class="rating">
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star-half_alt"></span>
-                           </div>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                           ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                       </div>
-                   </div>
-                   <div class="col-lg-6">
-                       <div class="testimonial__item">
-                           <div class="testimonial__author">
-                               <div class="testimonial__author__pic">
-                                   <img src="img/testimonial/ta-2.jpg" alt="">
-                               </div>
-                               <div class="testimonial__author__text">
-                                   <h5>Kerry D.Silva</h5>
-                                   <span>New york</span>
-                               </div>
-                           </div>
-                           <div class="rating">
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star-half_alt"></span>
-                           </div>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                           ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                       </div>
-                   </div>
-                   <div class="col-lg-6">
-                       <div class="testimonial__item">
-                           <div class="testimonial__author">
-                               <div class="testimonial__author__pic">
-                                   <img src="img/testimonial/ta-1.jpg" alt="">
-                               </div>
-                               <div class="testimonial__author__text">
-                                   <h5>Ophelia Nunez</h5>
-                                   <span>London</span>
-                               </div>
-                           </div>
-                           <div class="rating">
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star-half_alt"></span>
-                           </div>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                           ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                       </div>
-                   </div>
-                   <div class="col-lg-6">
-                       <div class="testimonial__item">
-                           <div class="testimonial__author">
-                               <div class="testimonial__author__pic">
-                                   <img src="img/testimonial/ta-2.jpg" alt="">
-                               </div>
-                               <div class="testimonial__author__text">
-                                   <h5>Kerry D.Silva</h5>
-                                   <span>New york</span>
-                               </div>
-                           </div>
-                           <div class="rating">
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star-half_alt"></span>
-                           </div>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                           ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                       </div>
-                   </div>
-                   <div class="col-lg-6">
-                       <div class="testimonial__item">
-                           <div class="testimonial__author">
-                               <div class="testimonial__author__pic">
-                                   <img src="img/testimonial/ta-1.jpg" alt="">
-                               </div>
-                               <div class="testimonial__author__text">
-                                   <h5>Ophelia Nunez</h5>
-                                   <span>London</span>
-                               </div>
-                           </div>
-                           <div class="rating">
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star-half_alt"></span>
-                           </div>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                           ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                       </div>
-                   </div>
-                   <div class="col-lg-6">
-                       <div class="testimonial__item">
-                           <div class="testimonial__author">
-                               <div class="testimonial__author__pic">
-                                   <img src="img/testimonial/ta-2.jpg" alt="">
-                               </div>
-                               <div class="testimonial__author__text">
-                                   <h5>Kerry D.Silva</h5>
-                                   <span>New york</span>
-                               </div>
-                           </div>
-                           <div class="rating">
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star"></span>
-                               <span class="icon_star-half_alt"></span>
-                           </div>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                           ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                       </div>
-                   </div>
+                  @foreach ($rates as $rate) 
+                     <div class="col-lg-6">
+                         <div class="testimonial__item">
+                             <div class="testimonial__author">
+                                 <div class="testimonial__author__pic">
+                                     <img src="uploads/{{$rate->image}}" alt="">
+                                 </div>
+                                 <div class="testimonial__author__text">
+                                     <h5>{{$rate->customer->name}}</h5>
+                                     <span>{{$rate->customer->address}}</span>
+                                 </div>
+                             </div>
+                             <div class="rating">
+                                 <span class="icon_star"></span>
+                                 <span class="icon_star"></span>
+                                 <span class="icon_star"></span>
+                                 <span class="icon_star"></span>
+                                 <span class="icon_star"></span>
+                             </div>
+                             <p>{{$rate->content}}</p>
+                         </div>
+                     </div>
+                  @endforeach
                </div>
            </div>
        </div>
@@ -578,21 +341,24 @@
    <div class="map">
        <div class="container">
            <div class="row">
-               <div class="col-lg-4 col-md-7">
-                   <div class="map__inner">
-                       <h6>COlorado</h6>
-                       <ul>
-                           <li>1000 Lakepoint Dr, Frisco, CO 80443, USA</li>
-                           <li>Sweetcake@support.com</li>
-                           <li>+1 800-786-1000</li>
-                       </ul>
-                   </div>
-               </div>
+            <div class="col-lg-1 col-md-7">
+            </div>
+            <div class="col-lg-4 col-md-7">
+                <div class="map__inner">
+                    <h6>{{$shop_info->name}}</h6>
+                    <ul>
+                        <li>{{$shop_info->address}}</li>
+                        <li>{{$shop_info->email}}</li>
+                        <li>{{$shop_info->phone}}</li>
+                    </ul>
+                </div>
+            </div>
            </div>
        </div>
        <div class="map__iframe">
-           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10784.188505644011!2d19.053119335158936!3d47.48899529453826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1543907528304" height="300" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-       </div>
+        <iframe src="{{$shop_info->map}}" height="300" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        
+    </div>
    </div>
    <!-- Map End -->
 

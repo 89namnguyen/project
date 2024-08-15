@@ -27,6 +27,7 @@
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
+
 html,
 body {
   height: 100%;
@@ -1005,7 +1006,6 @@ ol {
   bottom: -10px;
   height: 20px;
   width: 20px;
-  background: #ffffff;
   content: "";
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);

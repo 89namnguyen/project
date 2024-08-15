@@ -43,7 +43,7 @@ class UserController extends Controller
             're_password' => 'required|same:password'
         ]);
 
-        $formData = $request->all('name', 'email');
+        $formData = $request->all();
         $formData['password'] = bcrypt($request->password);
 
         if (User::create($formData)) {
@@ -85,7 +85,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         // lấy các trường khác trên form
-        $formData = $request->all('name','email');
+        $formData = $request->all();
         
         if ($user->update($formData)) {
             return redirect()->route('user.index')->with('success', 'Cập nhật thành công');
