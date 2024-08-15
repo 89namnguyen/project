@@ -134,21 +134,11 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `content` text NOT NULL,
   `date` date DEFAULT NOW(),
   `status` tinyint DEFAULT '1',
+  `comment_id`INT NULL,
   PRIMARY KEY `pk_cm`(`id`),
   FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `feedback` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `comment_id` INT NOT NULL,
-  `customer_id` INT NOT NULL,
-  `content` text NOT NULL,
-  `date` date DEFAULT NOW() ,
-  `status` tinyint DEFAULT '1',
-  PRIMARY KEY `pk_fb`(`id`),
-  FOREIGN KEY (`comment_id`) REFERENCES `comment` (`id`),
-  FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)
-) ENGINE = InnoDB;
 
 
 CREATE TABLE IF NOT EXISTS `rating` (
