@@ -180,19 +180,26 @@
                     <div class="footer__widget">
                         <h6>WORKING HOURS</h6>
                         <ul>
-                            <li>Monday - Friday: 08:00 am – 08:30 pm</li>
-                            <li>Saturday: 10:00 am – 16:30 pm</li>
-                            <li>Sunday: 10:00 am – 16:30 pm</li>
+                            @foreach ($shop_info->h_open as $time) 
+                                @if ($time->day == 1)
+                                <li>Monday - Friday : {{$time->time_open}}:00 am – {{$time->time_close - 12}}:00 pm</li>  
+                                @endif
+                                @if ($time->day == 2)
+                                <li>Saturday : {{$time->time_open}}:00 am – {{$time->time_close - 12}}:00 pm</li>  
+                                @endif
+                                @if ($time->day == 3)
+                                <li>Sunday : {{$time->time_open}}:00 am – {{$time->time_close - 12}}:00 pm</li>  
+                                @endif
+                            @endforeach
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                            <a href="#"><img src="uploads/footer-{{$shop_info->logo}}" alt=""></a>
                         </div>
-                        <p>Lorem ipsum dolor amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore dolore magna aliqua.</p>
+                        <p>{{$shop_info->title}}</p>
                         <div class="footer__social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>

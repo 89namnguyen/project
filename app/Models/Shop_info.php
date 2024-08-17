@@ -13,6 +13,6 @@ class Shop_info extends Model
     protected $fillable = ['name','logo','email','address','phone','map','date','level'];
     // quan hệ 1-1
     public function h_open() {
-        return $this->hasOne(H_open::class, 'shop_id','id');
+        return $this->hasMany(H_open::class, 'shop_id','id');
     }
 }

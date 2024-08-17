@@ -18,7 +18,7 @@ class HomeController extends Controller
         $shop_info = Shop_info::where('level', 1)->first();
         $rates= Rate::where('rate', 5)->inRandomOrder()->orderBy('date','DESC')->limit(6)->get();
         $cats = Category::orderBy('name', 'asc')->get();
-        $products = Product::where('status', 1)->orderBy('date','DESC')->limit(3)->get();
+        $products = Product::where('status', 1)->orderBy('date','DESC')->limit(8)->get();
         $SaleProducts = Product::where('status', 1)->where('sale_price','>', 0)->orderBy('date','DESC')->limit(3)->get();
         $randomProducts = Product::where('status', 1)->where('sale_price','>', 0)->inRandomOrder()->limit(8)->get();
         $blogs = Blog::where('status', 1)->orderBy('date','DESC')->limit(3)->get();
@@ -27,7 +27,7 @@ class HomeController extends Controller
     }
 
     public function product(Product $product) {
-        $shop_info = Shop_info::where('level', 1)->first();
+        $shop_info = Shop_info::where('level', 1);
         $active = 'product';
         return view('product', compact('active','product','shop_info'));
     }
