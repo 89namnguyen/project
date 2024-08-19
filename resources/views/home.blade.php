@@ -43,8 +43,7 @@
                            <span>About {{$shop_info->name}}</span>
                            <h2>Cakes and bakes from the house of Queens!</h2>
                        </div>
-                       <p>The "Cake Shop" is a Jordanian Brand that started as a small family business. The owners are
-                       Dr. Iyad Sultan and Dr. Sereen Sharabati, supported by a staff of 80 employees.</p>
+                       <p>{{$shop_info->title}}</p>
                    </div>
                </div>
                <div class="col-lg-6 col-md-6">
@@ -103,7 +102,7 @@
    <section class="product spad">
        <div class="container">
            <div class="row">
-               @foreach ($products as $product) 
+               @foreach ($randomProducts as $product) 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="uploads/{{$product->image}}">
@@ -140,17 +139,14 @@
                <div class="col-lg-6">
                    <div class="class__form">
                        <div class="section-title">
-                           <span>Class cakes</span>
-                           <h2>Made from your <br />own hands</h2>
+                           <span>order cakes</span>
+                           <h2>
+                            Make cakes according to <br />your request</h2>
                        </div>
                        <form action="#">
                            <input type="text" placeholder="Name">
                            <input type="text" placeholder="Phone">
-                           <select>
-                               <option value="">Studying Class</option>
-                               <option value="">Writting Class</option>
-                               <option value="">Reading Class</option>
-                           </select>
+                           <input type="text" placeholder="Gmail">
                            <input type="text" placeholder="Type your requirements">
                            <button type="submit" class="site-btn">registration</button>
                        </form>
@@ -261,7 +257,7 @@
                          <div class="testimonial__item">
                              <div class="testimonial__author">
                                  <div class="testimonial__author__pic">
-                                     <img src="uploads/{{$rate->image}}" alt="">
+                                     <img src="uploads/{{$rate->customer->image}}" alt="">
                                  </div>
                                  <div class="testimonial__author__text">
                                      <h5>{{$rate->customer->name}}</h5>
@@ -269,11 +265,13 @@
                                  </div>
                              </div>
                              <div class="rating">
-                                 <span class="icon_star"></span>
-                                 <span class="icon_star"></span>
-                                 <span class="icon_star"></span>
-                                 <span class="icon_star"></span>
-                                 <span class="icon_star"></span>
+                                 @for ($i=0;$i<5;$i++) 
+                                    @if ($rate->rate > $i)
+                                        <span class="icon_star"></span>
+                                    @else
+                                        <i class="fa-regular fa-star"></i>
+                                    @endif
+                                 @endfor
                              </div>
                              <p>{{$rate->content}}</p>
                          </div>
@@ -295,39 +293,39 @@
                            <span>Follow us on instagram</span>
                            <h2>Sweet moments are saved as memories.</h2>
                        </div>
-                       <a href="#"><h5><i class="fa fa-instagram"></i> @sweetcake</h5></a>
+                       <a href="#"><h5><i class="fa fa-instagram"></i> &#64;{{$shop_info->name}}</h5></a>
                    </div>
                </div>
                <div class="col-lg-8">
                    <div class="row">
                        <div class="col-lg-4 col-md-4 col-sm-4 col-6">
                            <div class="instagram__pic">
-                               <img src="uploads/{{$products[1]->image}}" alt="">
+                               <img src="uploads/{{$randomProducts[0]->image}}" alt="">
                            </div>
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-6">
                            <div class="instagram__pic middle__pic">
-                               <img src="uploads/{{$products[2]->image}}" alt="">
+                               <img src="uploads/{{$randomProducts[1]->image}}" alt="">
                            </div>
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-6">
                            <div class="instagram__pic">
-                               <img src="uploads/{{$products[0]->image}}" alt="">
+                               <img src="uploads/{{$randomProducts[2]->image}}" alt="">
                            </div>
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-6">
                            <div class="instagram__pic">
-                               <img src="uploads/{{$products[1]->image}}" alt="">
+                               <img src="uploads/{{$randomProducts[5]->image}}" alt="">
                            </div>
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-6">
                            <div class="instagram__pic middle__pic">
-                               <img src="uploads/{{$products[2]->image}}" alt="">
+                               <img src="uploads/{{$randomProducts[6]->image}}" alt="">
                            </div>
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-6">
                            <div class="instagram__pic">
-                               <img src="uploads/{{$products[0]->image}}" alt="">
+                               <img src="uploads/{{$randomProducts[7]->image}}" alt="">
                            </div>
                        </div>
                    </div>
@@ -362,4 +360,4 @@
    </div>
    <!-- Map End -->
 
-   @stop
+@stop()

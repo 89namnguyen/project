@@ -129,6 +129,27 @@
         }
     });
 
+    $(".contact__slider").owlCarousel({
+        loop: true,
+        margin: 0,
+        items: 3,
+        dots: true,
+        smartSpeed: 1200,
+        autoHeight: false,
+        autoplay: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            768: {
+                items: 3
+            }
+        }
+    });
+
+
+
+
     /*---------------------------------
         Related Products Slider
     ----------------------------------*/

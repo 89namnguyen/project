@@ -54,6 +54,10 @@
             color:#f08632;
             font-size:16px;
         }
+        .fa-regular{
+            color: #f0c656;
+            font-size: 14px;
+        }
     </style>
 </head>
 

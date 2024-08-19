@@ -88,15 +88,16 @@
         </div>
         <div class="row">
             <div class="testimonial__slider owl-carousel">
+                @foreach ($rates as $rate) 
                 <div class="col-lg-6">
                     <div class="testimonial__item">
                         <div class="testimonial__author">
                             <div class="testimonial__author__pic">
-                                <img src="img/testimonial/ta-1.jpg" alt="">
+                                <img src="uploads/{{$rate->customer->image}}" alt="">
                             </div>
                             <div class="testimonial__author__text">
-                                <h5>Kerry D.Silva</h5>
-                                <span>New york</span>
+                                <h5>{{$rate->customer->name}}</h5>
+                                <span>{{$rate->customer->address}}</span>
                             </div>
                         </div>
                         <div class="rating">
@@ -104,122 +105,12 @@
                             <span class="icon_star"></span>
                             <span class="icon_star"></span>
                             <span class="icon_star"></span>
-                            <span class="icon_star-half_alt"></span>
+                            <span class="icon_star"></span>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
+                        <p>{{$rate->content}}</p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img src="img/testimonial/ta-2.jpg" alt="">
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Kerry D.Silva</h5>
-                                <span>New york</span>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star-half_alt"></span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img src="img/testimonial/ta-1.jpg" alt="">
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Ophelia Nunez</h5>
-                                <span>London</span>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star-half_alt"></span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img src="img/testimonial/ta-2.jpg" alt="">
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Kerry D.Silva</h5>
-                                <span>New york</span>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star-half_alt"></span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img src="img/testimonial/ta-1.jpg" alt="">
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Ophelia Nunez</h5>
-                                <span>London</span>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star-half_alt"></span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testimonial__item">
-                        <div class="testimonial__author">
-                            <div class="testimonial__author__pic">
-                                <img src="img/testimonial/ta-2.jpg" alt="">
-                            </div>
-                            <div class="testimonial__author__text">
-                                <h5>Kerry D.Silva</h5>
-                                <span>New york</span>
-                            </div>
-                        </div>
-                        <div class="rating">
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star-half_alt"></span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua viverra lacus vel facilisis.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
